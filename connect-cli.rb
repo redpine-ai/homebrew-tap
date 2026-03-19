@@ -5,41 +5,57 @@
 class ConnectCli < Formula
   desc "CLI for the Connect platform — MCP client for AI agents"
   homepage "https://github.com/redpine-ai/connect-cli"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.0/connect-cli_0.1.0_darwin_amd64.tar.gz"
-      sha256 "c8689dcee6e4a6741bb71118ebc8c004203f60fd384fd7639cba8321aab1dc77"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.1/connect-cli_0.1.1_darwin_amd64.tar.gz"
+      sha256 "a0f215862137b515f733d1abbfca5b6b7be585522177172a2ef4fa44a44f7d56"
 
       define_method(:install) do
         bin.install "connect"
+
+        bash_completion.install Utils.safe_popen_read(bin/"connect", "completion", "bash") => "connect"
+        zsh_completion.install Utils.safe_popen_read(bin/"connect", "completion", "zsh") => "_connect"
+        fish_completion.install Utils.safe_popen_read(bin/"connect", "completion", "fish") => "connect.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.0/connect-cli_0.1.0_darwin_arm64.tar.gz"
-      sha256 "e0c00471dd46a25bba7bef03bf5c91ccbcf2cd02706a9904285bf395545b6001"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.1/connect-cli_0.1.1_darwin_arm64.tar.gz"
+      sha256 "595871f9b910c519e049d866c360a0fb78ea27c9212dbd51486b5a15ebeb135b"
 
       define_method(:install) do
         bin.install "connect"
+
+        bash_completion.install Utils.safe_popen_read(bin/"connect", "completion", "bash") => "connect"
+        zsh_completion.install Utils.safe_popen_read(bin/"connect", "completion", "zsh") => "_connect"
+        fish_completion.install Utils.safe_popen_read(bin/"connect", "completion", "fish") => "connect.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.0/connect-cli_0.1.0_linux_amd64.tar.gz"
-      sha256 "46f526776a84694ff05a5c7a543981a85232717e14dc53bd811865cdaf9b7632"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.1/connect-cli_0.1.1_linux_amd64.tar.gz"
+      sha256 "1ba1d55c24201126956ab0ca495c227158a32b7bd67d985c75a40c32e2131f0d"
       define_method(:install) do
         bin.install "connect"
+
+        bash_completion.install Utils.safe_popen_read(bin/"connect", "completion", "bash") => "connect"
+        zsh_completion.install Utils.safe_popen_read(bin/"connect", "completion", "zsh") => "_connect"
+        fish_completion.install Utils.safe_popen_read(bin/"connect", "completion", "fish") => "connect.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.0/connect-cli_0.1.0_linux_arm64.tar.gz"
-      sha256 "fde6e4c85e615bb3f30d6eacb46faa410df1cd4ddca25eb31420fc081da5250a"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.1/connect-cli_0.1.1_linux_arm64.tar.gz"
+      sha256 "4c7beb25157a30d5f83c7acf07d5dcb1aea98737701f70753559a025c4ec7f84"
       define_method(:install) do
         bin.install "connect"
+
+        bash_completion.install Utils.safe_popen_read(bin/"connect", "completion", "bash") => "connect"
+        zsh_completion.install Utils.safe_popen_read(bin/"connect", "completion", "zsh") => "_connect"
+        fish_completion.install Utils.safe_popen_read(bin/"connect", "completion", "fish") => "connect.fish"
       end
     end
   end
