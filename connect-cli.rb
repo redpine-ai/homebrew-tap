@@ -5,13 +5,13 @@
 class ConnectCli < Formula
   desc "CLI for the Connect platform — MCP client for AI agents"
   homepage "https://github.com/redpine-ai/connect-cli"
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.4/connect-cli_0.1.4_darwin_amd64.tar.gz"
-      sha256 "8bd8aa3438c0c77a3f2bdeb7c1aa6f73bd75b377acbed8b4380b6da659929745"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.5/connect-cli_0.1.5_darwin_amd64.tar.gz"
+      sha256 "856019bf70f4a90b06e3b7b4ff78971d4e1f42622df61d57cff75205b8adc5ef"
 
       define_method(:install) do
         bin.install "connect"
@@ -25,8 +25,8 @@ class ConnectCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.4/connect-cli_0.1.4_darwin_arm64.tar.gz"
-      sha256 "b8bdfd039cd482b08ceb919f6e056df556eb49ce27e0def48d08aba1eeb33735"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.5/connect-cli_0.1.5_darwin_arm64.tar.gz"
+      sha256 "58ba5c790af3849ec9abd10a809dac884c53f11bee6c08f19da1d9d2ab98ec48"
 
       define_method(:install) do
         bin.install "connect"
@@ -43,8 +43,8 @@ class ConnectCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.4/connect-cli_0.1.4_linux_amd64.tar.gz"
-      sha256 "267e6c4350d2b0a9299f36c123b295826c4aa36d048ab626327a553c3d189751"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.5/connect-cli_0.1.5_linux_amd64.tar.gz"
+      sha256 "9e86d759166907f17f535eff1d00fcd29c2d9dff6391ff2135c6a0fb46d95533"
       define_method(:install) do
         bin.install "connect"
 
@@ -57,8 +57,8 @@ class ConnectCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.4/connect-cli_0.1.4_linux_arm64.tar.gz"
-      sha256 "3c71b6b5985ed5f2afb830ee9375f73730a3dc6dad3d340ba63dc5b8572751df"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.5/connect-cli_0.1.5_linux_arm64.tar.gz"
+      sha256 "19feef8845ffae655a1203f4c013d3becd7cd5693dd7feec5f4a5c14f2615dbe"
       define_method(:install) do
         bin.install "connect"
 
