@@ -11,26 +11,32 @@ class ConnectCli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.1/connect-cli_0.1.1_darwin_amd64.tar.gz"
-      sha256 "a0f215862137b515f733d1abbfca5b6b7be585522177172a2ef4fa44a44f7d56"
+      sha256 "0989f67eb891d03a3103fbe68c90d510342673a9dbc874914ad1385d2a8f8732"
 
       define_method(:install) do
         bin.install "connect"
 
-        bash_completion.install Utils.safe_popen_read(bin/"connect", "completion", "bash") => "connect"
-        zsh_completion.install Utils.safe_popen_read(bin/"connect", "completion", "zsh") => "_connect"
-        fish_completion.install Utils.safe_popen_read(bin/"connect", "completion", "fish") => "connect.fish"
+        output = Utils.safe_popen_read(bin/"connect", "completion", "bash")
+        (bash_completion/"connect").write output
+        output = Utils.safe_popen_read(bin/"connect", "completion", "zsh")
+        (zsh_completion/"_connect").write output
+        output = Utils.safe_popen_read(bin/"connect", "completion", "fish")
+        (fish_completion/"connect.fish").write output
       end
     end
     if Hardware::CPU.arm?
       url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.1/connect-cli_0.1.1_darwin_arm64.tar.gz"
-      sha256 "595871f9b910c519e049d866c360a0fb78ea27c9212dbd51486b5a15ebeb135b"
+      sha256 "97e6b29cf2c345488aa969230a4d4fe74d0ec1371c2f9baf12d3d6d725442c56"
 
       define_method(:install) do
         bin.install "connect"
 
-        bash_completion.install Utils.safe_popen_read(bin/"connect", "completion", "bash") => "connect"
-        zsh_completion.install Utils.safe_popen_read(bin/"connect", "completion", "zsh") => "_connect"
-        fish_completion.install Utils.safe_popen_read(bin/"connect", "completion", "fish") => "connect.fish"
+        output = Utils.safe_popen_read(bin/"connect", "completion", "bash")
+        (bash_completion/"connect").write output
+        output = Utils.safe_popen_read(bin/"connect", "completion", "zsh")
+        (zsh_completion/"_connect").write output
+        output = Utils.safe_popen_read(bin/"connect", "completion", "fish")
+        (fish_completion/"connect.fish").write output
       end
     end
   end
@@ -38,24 +44,30 @@ class ConnectCli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.1/connect-cli_0.1.1_linux_amd64.tar.gz"
-      sha256 "1ba1d55c24201126956ab0ca495c227158a32b7bd67d985c75a40c32e2131f0d"
+      sha256 "58a1a0a0c1a5f0487b168c58f8706ef319638150f0f87f96108f6de85473c413"
       define_method(:install) do
         bin.install "connect"
 
-        bash_completion.install Utils.safe_popen_read(bin/"connect", "completion", "bash") => "connect"
-        zsh_completion.install Utils.safe_popen_read(bin/"connect", "completion", "zsh") => "_connect"
-        fish_completion.install Utils.safe_popen_read(bin/"connect", "completion", "fish") => "connect.fish"
+        output = Utils.safe_popen_read(bin/"connect", "completion", "bash")
+        (bash_completion/"connect").write output
+        output = Utils.safe_popen_read(bin/"connect", "completion", "zsh")
+        (zsh_completion/"_connect").write output
+        output = Utils.safe_popen_read(bin/"connect", "completion", "fish")
+        (fish_completion/"connect.fish").write output
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.1/connect-cli_0.1.1_linux_arm64.tar.gz"
-      sha256 "4c7beb25157a30d5f83c7acf07d5dcb1aea98737701f70753559a025c4ec7f84"
+      sha256 "3dd1d6ede418f2ce123814554ef12e61745a1edeac4fe7d7b0bbb4e843ff608f"
       define_method(:install) do
         bin.install "connect"
 
-        bash_completion.install Utils.safe_popen_read(bin/"connect", "completion", "bash") => "connect"
-        zsh_completion.install Utils.safe_popen_read(bin/"connect", "completion", "zsh") => "_connect"
-        fish_completion.install Utils.safe_popen_read(bin/"connect", "completion", "fish") => "connect.fish"
+        output = Utils.safe_popen_read(bin/"connect", "completion", "bash")
+        (bash_completion/"connect").write output
+        output = Utils.safe_popen_read(bin/"connect", "completion", "zsh")
+        (zsh_completion/"_connect").write output
+        output = Utils.safe_popen_read(bin/"connect", "completion", "fish")
+        (fish_completion/"connect.fish").write output
       end
     end
   end
