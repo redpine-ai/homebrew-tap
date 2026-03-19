@@ -11,7 +11,7 @@ class ConnectCli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/redpine-ai/connect-cli/releases/download/v0.0.1/connect-cli_0.0.1_darwin_amd64.tar.gz"
-      sha256 "e1ffaadee7ce50732c2b49e11ca7140b4f0a791912e3df47b7ab71dd88ea9845"
+      sha256 "3f79aeec9b03f4a26f6fac0cac3d7bf3b5b21c06aeeb4c14d517c13053ab4b74"
 
       define_method(:install) do
         bin.install "redpine"
@@ -26,7 +26,7 @@ class ConnectCli < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/redpine-ai/connect-cli/releases/download/v0.0.1/connect-cli_0.0.1_darwin_arm64.tar.gz"
-      sha256 "c9319fe8adb55d5e574e5bd8d61be7612315e13d75b7e36f93053556016fca86"
+      sha256 "2174e00cfcf09f89992ccc7ce72c61ecb29f2410f7144e508adba74a5525fe3b"
 
       define_method(:install) do
         bin.install "redpine"
@@ -44,7 +44,7 @@ class ConnectCli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/redpine-ai/connect-cli/releases/download/v0.0.1/connect-cli_0.0.1_linux_amd64.tar.gz"
-      sha256 "bf669ba6975cd71f32d17be9c6527f077a4c69e8fbcd23a988fb91c17ed461d4"
+      sha256 "5f3eba04d73af42628429c481068b9502511e4a9d70907dcf5cb686593ce1f5e"
       define_method(:install) do
         bin.install "redpine"
 
@@ -58,7 +58,7 @@ class ConnectCli < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/redpine-ai/connect-cli/releases/download/v0.0.1/connect-cli_0.0.1_linux_arm64.tar.gz"
-      sha256 "e01aaa3887b9591cfad2e9527f2d92917bd151a97b74bd8aefef756be42d3b60"
+      sha256 "872cc02b6b8a74f871a0b720a01c92590fa3adf94915ee28403d1dc242010757"
       define_method(:install) do
         bin.install "redpine"
 
