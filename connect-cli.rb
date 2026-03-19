@@ -5,69 +5,69 @@
 class ConnectCli < Formula
   desc "CLI for the Connect platform — MCP client for AI agents"
   homepage "https://github.com/redpine-ai/connect-cli"
-  version "0.1.5"
+  version "0.0.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.5/connect-cli_0.1.5_darwin_amd64.tar.gz"
-      sha256 "856019bf70f4a90b06e3b7b4ff78971d4e1f42622df61d57cff75205b8adc5ef"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.0.1/connect-cli_0.0.1_darwin_amd64.tar.gz"
+      sha256 "cccdb1cd761dff63d46ca6ccaeae907687f9bb1cebb150bda39526a913a38ac4"
 
       define_method(:install) do
-        bin.install "connect"
+        bin.install "redpine"
 
-        output = Utils.safe_popen_read(bin/"connect", "completion", "bash")
-        (bash_completion/"connect").write output
-        output = Utils.safe_popen_read(bin/"connect", "completion", "zsh")
-        (zsh_completion/"_connect").write output
-        output = Utils.safe_popen_read(bin/"connect", "completion", "fish")
-        (fish_completion/"connect.fish").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "bash")
+        (bash_completion/"redpine").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "zsh")
+        (zsh_completion/"_redpine").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "fish")
+        (fish_completion/"redpine.fish").write output
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.5/connect-cli_0.1.5_darwin_arm64.tar.gz"
-      sha256 "58ba5c790af3849ec9abd10a809dac884c53f11bee6c08f19da1d9d2ab98ec48"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.0.1/connect-cli_0.0.1_darwin_arm64.tar.gz"
+      sha256 "9d4f3e40c84de30e5c89e4adeb6629a95a71b675e634638d8e5fe4968aacfff1"
 
       define_method(:install) do
-        bin.install "connect"
+        bin.install "redpine"
 
-        output = Utils.safe_popen_read(bin/"connect", "completion", "bash")
-        (bash_completion/"connect").write output
-        output = Utils.safe_popen_read(bin/"connect", "completion", "zsh")
-        (zsh_completion/"_connect").write output
-        output = Utils.safe_popen_read(bin/"connect", "completion", "fish")
-        (fish_completion/"connect.fish").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "bash")
+        (bash_completion/"redpine").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "zsh")
+        (zsh_completion/"_redpine").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "fish")
+        (fish_completion/"redpine.fish").write output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.5/connect-cli_0.1.5_linux_amd64.tar.gz"
-      sha256 "9e86d759166907f17f535eff1d00fcd29c2d9dff6391ff2135c6a0fb46d95533"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.0.1/connect-cli_0.0.1_linux_amd64.tar.gz"
+      sha256 "0e694b1c13ef6e98bc96c0a261221293ef114fb0844df4fa237a46e4712e5bc6"
       define_method(:install) do
-        bin.install "connect"
+        bin.install "redpine"
 
-        output = Utils.safe_popen_read(bin/"connect", "completion", "bash")
-        (bash_completion/"connect").write output
-        output = Utils.safe_popen_read(bin/"connect", "completion", "zsh")
-        (zsh_completion/"_connect").write output
-        output = Utils.safe_popen_read(bin/"connect", "completion", "fish")
-        (fish_completion/"connect.fish").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "bash")
+        (bash_completion/"redpine").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "zsh")
+        (zsh_completion/"_redpine").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "fish")
+        (fish_completion/"redpine.fish").write output
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.1.5/connect-cli_0.1.5_linux_arm64.tar.gz"
-      sha256 "19feef8845ffae655a1203f4c013d3becd7cd5693dd7feec5f4a5c14f2615dbe"
+      url "https://github.com/redpine-ai/connect-cli/releases/download/v0.0.1/connect-cli_0.0.1_linux_arm64.tar.gz"
+      sha256 "1d890ee0ebcc79a6876a8a7371da7c38d9824c296550c3e878116c3acd9b8609"
       define_method(:install) do
-        bin.install "connect"
+        bin.install "redpine"
 
-        output = Utils.safe_popen_read(bin/"connect", "completion", "bash")
-        (bash_completion/"connect").write output
-        output = Utils.safe_popen_read(bin/"connect", "completion", "zsh")
-        (zsh_completion/"_connect").write output
-        output = Utils.safe_popen_read(bin/"connect", "completion", "fish")
-        (fish_completion/"connect.fish").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "bash")
+        (bash_completion/"redpine").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "zsh")
+        (zsh_completion/"_redpine").write output
+        output = Utils.safe_popen_read(bin/"redpine", "completion", "fish")
+        (fish_completion/"redpine.fish").write output
       end
     end
   end
